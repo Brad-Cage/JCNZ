@@ -260,11 +260,416 @@ section h2 {
     align-items: center;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem 0;
+/* Services Page Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-category {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.service-category:hover {
+    transform: translateY(-5px);
+}
+
+.service-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-category h3 i {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+}
+
+.service-category p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
     color: var(--text-color);
-    opacity: 0.8;
+}
+
+.service-category ul {
+    list-style: none;
+}
+
+.service-category li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-category li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Process Steps */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto 1.5rem;
+}
+
+.step h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Wedding Livestream Page Styles */
+.wedding-header {
+    background-image: url('wedding-header.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+    min-height: 50vh;
+}
+
+.wedding-info {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.couple-names {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.couple-names .name {
+    font-weight: 600;
+    color: #f39c12;
+}
+
+.couple-names .and {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: #ecf0f1;
+}
+
+.wedding-date {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.header-decoration {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.decorative-hat {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.decorative-hat:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Livestream Section */
+.livestream-section {
+    background-color: var(--section-background);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.livestream-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.livestream-placeholder {
+    background-color: #000;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.livestream-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.status-indicator.live {
+    color: #e74c3c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator.live i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.viewer-count {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+.video-placeholder {
+    height: 400px;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-align: center;
+}
+
+.video-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.embed-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.embed-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.livestream-controls {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Timeline */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--secondary-color);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item .time {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: center;
+    z-index: 1;
+}
+
+.timeline-item .event {
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 0 2rem;
+    flex: 1;
+    max-width: 300px;
+}
+
+.timeline-item .event h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-item .event h3 i {
+    color: var(--secondary-color);
+}
+
+/* Wedding Details */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail-card {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.detail-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.detail-card h3 i {
+    color: var(--secondary-color);
+}
+
+.detail-card p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Guest Message */
+.guest-message {
+    background-color: white;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.message-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.signature {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.signature .bride-name {
+    color: black;
+}
+
+.signature .groom-name {
+    color: black;
+}
+
+.signature .and {
+    margin: 0 1rem;
+    color: var(--text-color);
 }
 
 .placeholder {
@@ -274,6 +679,38 @@ footer {
     align-items: center;
     justify-content: center;
     color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.signature-image {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.signature-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hat-divider {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.hat-image {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
 }
 
 @media (max-width: 768px) {
