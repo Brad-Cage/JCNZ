@@ -370,8 +370,11 @@ section h2 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #ffffff;
-    min-height: 50vh;
+    background-color: var(--section-background);
+    padding: 2rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    min-height: 40vh;
 }
 
 .wedding-info {
@@ -713,6 +716,103 @@ footer {
     height: auto;
 }
 
+.accordion {
+    margin-top: 1rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 0.5rem 1rem;
+}
+
+.accordion summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary-color);
+    list-style: none;
+}
+
+.accordion[open] summary {
+    margin-bottom: 0.5rem;
+}
+
+.accordion ul {
+    padding-left: 1.2rem;
+}
+
+.accordion li {
+    margin-bottom: 0.5rem;
+}
+
+.help-heading {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.help-steps {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    line-height: 1.8;
+    padding-left: 0.75rem;
+    list-style-position: inside;
+}
+
+.help-steps li {
+    margin-bottom: 0.4rem;
+}
+
+.help-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Accordion polish */
+.accordion {
+    margin: 1rem auto 0;
+    background-color: var(--section-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 0.75rem 1rem;
+    max-width: 900px;
+}
+
+.accordion summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary-color);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.accordion summary::after {
+    content: '\25BC';
+    margin-left: auto;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+    color: var(--primary-color);
+}
+
+.accordion[open] summary::after {
+    transform: rotate(-180deg);
+}
+
+.accordion-content {
+    margin-top: 0.75rem;
+}
+
+.accordion-content ul {
+    padding-left: 0.75rem;
+    line-height: 1.7;
+    list-style-position: inside;
+}
+
+.accordion-content li {
+    margin-bottom: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .about-content,
     .contact-content {
@@ -723,15 +823,30 @@ footer {
         flex-direction: column;
     }
 
+    .container {
+        padding: 0 0rem;
+    }
+
+    .header-content {
+        padding-left: 0rem;
+    }
+
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     section {
-        padding: 2rem 0;
+        padding: 1.5rem 0;
+    }
+
+    .wedding-header {
+        padding: 1rem 0;
+        min-height: 28vh;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
     }
 } 
