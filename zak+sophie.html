@@ -102,6 +102,14 @@
                     </div>
                 </div>
             </section>
+            
+            <section class="order-of-service" id="Order_of_Service">
+                <h2>Order of Service</h2>
+                <div class="order-images">
+                    <img src="Order_of_Service1.jpg" alt="Order of Service page 1">
+                    <img src="Order_of_Service2.jpg" alt="Order of Service page 2">
+                </div>
+            </section>
 
             <section class="guest-message">
                 <h2>A Message from the Couple</h2>
@@ -127,7 +135,6 @@
                             <li>If the stream hasn't begun yet, you'll see a countdown or placeholder. Once it goes live, the video will play automatically.</li>
                             <li>For best quality, tap the gear icon and choose the highest resolution available.</li>
                             <li>Rotate your device to landscape or tap the fullscreen icon for a larger view.</li>
-                            <li>You don't need a YouTube account to watch, but if you want to chat or interact, sign in with your Google account.</li>
                             <li>You can AirPlay/Chromecast from the YouTube player to a TV if supported.</li>
                         </ol>
                         <details class="accordion">
@@ -156,6 +163,55 @@
         <footer>
             <p>&copy; 2025 <a href="https://joshuaclarke.nz">Joshua Clarke Film</a>. All rights reserved.</p>
         </footer>
+
+        <div id="image-lightbox" class="image-lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+            <button class="close" aria-label="Close fullscreen">&times;</button>
+            <img alt="Fullscreen image">
+        </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.getElementById('image-lightbox');
+        var overlayImg = overlay.querySelector('img');
+        var closeBtn = overlay.querySelector('.close');
+        var images = document.querySelectorAll('.order-of-service .order-images img');
+
+        function openOverlay(src, alt) {
+            overlayImg.src = src;
+            overlayImg.alt = alt || 'Fullscreen image';
+            overlay.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOverlay() {
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+            overlayImg.src = '';
+            document.body.style.overflow = '';
+        }
+
+        images.forEach(function (img) {
+            img.addEventListener('click', function () {
+                openOverlay(img.src, img.alt);
+            });
+        });
+
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) {
+                closeOverlay();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeOverlay);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && overlay.classList.contains('open')) {
+                closeOverlay();
+            }
+        });
+    });
+    </script>
 </body>
 </html>
